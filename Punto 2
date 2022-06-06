@@ -1,0 +1,40 @@
+
+# declaramos la clase persona
+class Persona:
+    # declaramos el metodo __init__
+    def __init__(self):
+        self.nombre=input("Ingrese el nombre: ")
+  
+    # declaramos el metodo mostrar
+    def mostrar(self):
+        print("Nombre: ",self.nombre)
+  
+# declaramos la clase empleado
+# la clase empleado hereda los atributos y metodos de la clase Persona
+class alumno(Persona):
+    # declaramos el metodo __init__
+    def __init__(self):
+        # llamamos al metodo init de la clase padre
+        # utilizamos la funcion super() para hacer referencia al padre
+        super().__init__()
+        self.nota=float(input("Ingrese su nota : "))
+ 
+ 
+    # declaramos el metodo mostrar
+    def mostrar(self):
+        super().mostrar()
+        print("Nota: ",self.nota)
+ 
+ 
+    def aprobacion(self):
+        if self.nota >= 3 : 
+
+            print("Usted aprobo")
+        else:
+          print("Usted reprobo" )
+# bloque principal
+persona1=Persona()
+persona1.mostrar()
+alumno1=alumno()
+alumno1.mostrar()
+alumno1.aprobacion()
